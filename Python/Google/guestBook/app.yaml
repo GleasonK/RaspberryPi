@@ -1,0 +1,16 @@
+# Configuration File
+
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: latest
+  ##Declare you are using webapps2
+
+handlers:
+- url: /.*
+  script: guestBook.application
