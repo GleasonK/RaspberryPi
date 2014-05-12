@@ -1,0 +1,25 @@
+
+// Create New Screen
+pi@raspberrypi01 ~ $ screen
+
+pi@raspberrypi01 ~ $ <Enter Command>
+
+// Detach Screen
+pi@raspberrypi01 ~ $ CTRL+A d
+
+[detached from 3274.pts-1.raspberrypi01]
+
+// List All Screens
+pi@raspberrypi01 ~ $ screen -ls
+
+There is a screen on:
+3274.pts-1.raspberrypi01        (10/28/2012 08:45:05 AM)        (Detached)
+1 Socket in /var/run/screen/S-pi.
+
+// Resume Screen
+pi@raspberrypi01 ~ $ screen -r 3274
+
+// Kill Screen
+pi@raspberrypi01 ~ $ CTRL+A k
+
+Really kill this window [y/n]
