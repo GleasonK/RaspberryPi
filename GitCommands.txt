@@ -1,0 +1,78 @@
+//Shortcut to make new branch
+
+$ git checkout -b BRANCH-NAME
+Switched to a new branch 'BRANCH-NAME'
+
+or
+
+$ git branch BRANCH-NAME   //Create the Branch
+$ git checkout BRANCH-NAME //Change to the Branch
+
+//Changes will now be pushed to the branch
+
+//Add and commit to the active branch
+$ git commit -a -m 'added a new footer to branch'
+
+//Back to the master branch
+$ git checkout master
+Switched to branch 'master'
+
+//Quickly change topics to a needed hotfix
+$ git checkout -b hotfix
+Switched to a new branch 'hotfix'
+$ vim index.html
+$ git commit -a -m 'fixed the broken email address'
+[hotfix 3a0874c] fixed the broken email address
+ 1 files changed, 1 deletion(-)
+
+//Now merge the branches
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ README | 1 -
+ 1 file changed, 1 deletion(-)
+
+ //Delete unnecesary branches
+$ git branch -d hotfix
+Deleted branch hotfix (was 3a0874c).
+
+//Back to original branch
+$ git checkout iss53
+Switched to branch 'iss53'
+$ vim index.html
+$ git commit -a -m 'finished the new footer [issue 53]'
+[iss53 ad82d7a] finished the new footer [issue 53]
+ 1 file changed, 1 insertion(+)
+
+ //Now merge that one, switch to the main branch first
+$ git checkout master
+$ git merge iss53
+Auto-merging README
+Merge made by the 'recursive' strategy.
+ README | 1 +
+ 1 file changed, 1 insertion(+)
+
+ //Delete that branch
+$ git branch -d iss53
+
+ //Conflict Example
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+//Merge Tool
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc3 codecompare vimdiff emerge
+Merging:
+index.html
+
+Normal merge conflict for 'index.html':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (opendiff):
