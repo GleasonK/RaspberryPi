@@ -6,3 +6,7 @@
 #Class files
 *.pyc
 *.class
+
+#Audio files
+*.mp3
+*.wav
