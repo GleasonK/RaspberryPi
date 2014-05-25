@@ -1,2 +1,12 @@
 #System files to ignore
 .DS_Store
+.AppleSingle
+.AppleDouble
+
+#Class files
+*.pyc
+*.class
+
+#Audio files
+*.mp3
+*.wav

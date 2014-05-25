@@ -1,0 +1,6 @@
+#!/bin/bash
+
+read -p "Enter song location: " song
+read -p "Enter radio frequency: " freq
+
+sox -v .9 -t mp3 ~/Music/$song -t wav --input-buffer 80000 -r 22050 -c 1 - | sudo ./pifm - $freq
