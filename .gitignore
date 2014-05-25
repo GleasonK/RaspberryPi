@@ -1,2 +1,8 @@
 #System files to ignore
 .DS_Store
+.AppleSingle
+.AppleDouble
+
+#Class files
+*.pyc
+*.class
